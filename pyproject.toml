@@ -10,7 +10,20 @@ dependencies = [
     "numpy>=2.4.4",
     "requests>=2.33.1",
     "seaborn>=0.13.2",
-    "torch>=2.11.0",
-    "torchvision>=0.26.0",
     "tqdm>=4.67.3",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
 ]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu130" }
+]
+torchvision = [
+    { index = "pytorch-cu130" }
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
